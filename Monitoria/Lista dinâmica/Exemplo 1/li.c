@@ -97,3 +97,39 @@ int inserir_final(Lista *li,struct pessoa pe){
 	}
 	return 1;
 }
+
+int remover_inicio(Lista *li){
+	if(li==NULL){
+		return 0;
+	}
+	if(*li==NULL){
+		return 0;
+	}
+	Elem *no;
+	no=(*li);
+	*li=no->prox;
+	free(no);
+	return 1;
+}
+
+int remover_final(Lista *li){
+	if(li==NULL){
+		return 0;
+	}
+	if(*li==NULL){//Vazia
+		return 0;
+	}
+	Elem *no,*ant;
+	no=(*li);
+	while(no->prox!=NULL){
+		ant=no;
+		no=no->prox;
+	}
+	//1 Elemento apenas:
+	if(no==(*li)){
+		*li=no->prox;
+	}
+	ant->prox=no->prox;
+	free(no);
+	return 1;
+}

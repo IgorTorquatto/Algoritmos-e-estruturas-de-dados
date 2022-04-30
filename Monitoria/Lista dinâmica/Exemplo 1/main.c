@@ -44,6 +44,14 @@ int main(int argc, char *argv[]) {
 	printf("\nLista com 4 elementos: \n");
 	imprimir(li);
 	
+	printf("\n Removendo inicio: \n");
+	remover_inicio(li);
+	imprimir(li);
+	
+	printf("\n Removendo finaL: \n");
+	remover_final(li);
+	imprimir(li);
+	
 	
 	liberar(li);
 	return 0;
