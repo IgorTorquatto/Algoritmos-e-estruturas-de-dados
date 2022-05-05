@@ -126,3 +126,49 @@ int remover_final(Lista *li){
 	free(atual);
 	return 1;
 }
+
+int inserir_ordenado(Lista *li,struct aluno al){
+	if(li==NULL) return 0;
+	Elem *no;
+	no=(Elem*)malloc(sizeof(Elem));
+	if(no==NULL) return 0;
+	no->dados=al;
+	if(*li==NULL){
+		no->prox=(*li);
+		*li=no;
+		return 1;
+	}
+	else{
+		Elem *ant,*atual;
+		atual=*li;
+		while(atual!=NULL && atual->dados.id < al.id){
+			ant=atual;
+			atual=atual->prox;
+		}
+		if(atual==NULL){
+			no->prox=(*li);
+			*li=no;
+		}else{
+			no->prox=ant->prox;
+			ant->prox=no;
+		}
+		return 1;
+	}
+}
+
+int remover_valor(Lista *li, int x){
+	if(li==NULL) return 0;
+	if(*li==NULL) return 0;
+	
+	Elem *atual,*ant;
+	atual=*li;
+	while(atual!=NULL && atual->dados.id != x){
+		ant=atual;
+		atual=atual->prox;
+	}
+	if(atual==*li){
+		*li=atual->prox;
+	}
+	ant->prox=atual->prox;
+	free(atual);
+}

@@ -15,3 +15,5 @@ int inserir_inicio(Lista *li,struct aluno al);
 int remover_inicio(Lista *li);
 int inserir_final(Lista *li,struct aluno al);
 int remover_final(Lista *li);
+int inserir_ordenado(Lista *li,struct aluno al);
+int remover_valor(Lista *li, int x);

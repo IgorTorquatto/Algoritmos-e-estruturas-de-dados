@@ -51,6 +51,22 @@ int main(int argc, char *argv[]) {
 	remover_final(li);
 	imprimir(li);
 	
+	printf("\nInserindo elemento 2:\n");
+	inserir_ordenado(li,al2);
+	imprimir(li);
+	printf("\nTamanho: %d",tamanho(li));
+	
+	printf("\nRemovendo final:\n");
+	remover_final(li);
+	imprimir(li);
+	printf("\nTamanho: %d",tamanho(li));
+	
+	
+	int x=2;
+	printf("\nRemovendo valor 2:\n");
+	remover_valor(li,x);
+	imprimir(li);
+	printf("\nTamanho: %d",tamanho(li));
 	
 	destruir(li);
 	return 0;
