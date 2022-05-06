@@ -88,3 +88,17 @@ int acessar(Pilha *pi, struct aluno *al){
 	*al=(*pi)->dados;
 	return 1;
 }
+
+int acessar_ultimo(Pilha *pi,struct aluno *al){
+	if(pi==NULL) return 0;
+	if(*pi==NULL) return 0;
+
+	Elem *aux;
+	aux=*pi;
+	while(aux->prox!=NULL){
+		aux=aux->prox;
+	}
+	*al=(aux)->dados;
+	return 1;
+	
+}

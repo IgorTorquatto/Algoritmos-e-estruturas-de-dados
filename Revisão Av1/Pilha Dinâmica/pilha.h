@@ -14,3 +14,6 @@ int imprimir(Pilha *pi);
 int inserir(Pilha *pi,struct aluno al);
 int remover(Pilha *pi);
 int acessar(Pilha *pi, struct aluno *al);
+
+//Exercicios
+int acessar_ultimo(Pilha *pi, struct aluno *al);
