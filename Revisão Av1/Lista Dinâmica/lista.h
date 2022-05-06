@@ -22,3 +22,9 @@ int inserir_ordenado(Lista *li,struct aluno al);
 int remover_inicio(Lista *li);
 int remover_final(Lista *li);
 int remover_valor(Lista *li,int x);
+
+//Exercicios:
+int remover_dois_inicio(Lista *li);
+int remover_dois_final(Lista *li);
+int inserir_unico(Lista *li, struct aluno al);
+int informacoes(Lista *li);
