@@ -179,3 +179,64 @@ int remover_valor(Lista *li,int x){
 	free(atual);
 	return 1;	
 }
+
+
+int remover_dois_inicio(Lista *li){
+	remover_inicio(li);
+	remover_inicio(li);
+}
+
+int remover_dois_final(Lista *li){
+	remover_final(li);
+	remover_final(li);
+}
+
+int inserir_unico(Lista *li, struct aluno al){
+    if(li == NULL) return 0;
+    Elem *no;
+    no = (Elem*)malloc(sizeof(Elem));
+    if(no == NULL) return 0;
+    no->dados = al;
+    Elem *check = *li;
+    while(check != NULL && check->dados.matricula != al.matricula){
+        check = check->prox;
+    }
+    //Retorna 0 porque o check->dados.atricula==al.matricula: ( Não faz nada).
+    if(check != NULL) return 0;
+    //Insere no inicio:
+    no->prox = *li;
+    *li = no;
+    return 1;
+}
+
+
+int informacoes(Lista *li){
+    int impares = 0, pares = 0, maior, menor;
+    if(li == NULL) return 0;
+    Elem *atual;
+    atual=*li;
+    while(atual!= NULL){
+        if(atual->dados.matricula % 2 == 1){
+            impares += 1;
+        }
+        else{
+            pares += 1;
+        }
+        if(atual == *li){
+            maior = (*li)->dados.matricula;
+            menor = (*li)->dados.matricula;
+        }
+        else{
+            if(atual->dados.matricula > maior){
+                maior = atual->dados.matricula;
+            }
+            if(atual->dados.matricula < menor){
+                menor = atual->dados.matricula;
+            }
+        }
+        atual = atual->prox;
+    }
+    printf("\n\nImpares: %d, Pares: %d, Maior: %d, Menor: %d\n\n", impares, pares, maior, menor);
+    return 0;
+}
+
