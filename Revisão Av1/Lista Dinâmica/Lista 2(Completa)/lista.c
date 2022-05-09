@@ -307,3 +307,25 @@ Lista* copia(Lista *li){
 
     return lf;
 }
+
+Lista* segmentar(Lista *li, int n){
+    if(li == NULL) return 0;
+    if(*li == NULL) return 0;
+    Lista *lf;
+    lf = (Lista*)malloc(sizeof(Lista));
+    if(lf != NULL){
+        *lf = NULL;
+    }
+    else{
+        return 0;
+    }
+    Elem *aux = *li;
+    int i;
+    for(i = 0; i < n; i++){
+        aux = aux->prox;
+    }
+    *lf = aux->prox;
+    aux->prox = NULL;
+    return lf;
+
+}

@@ -29,3 +29,4 @@ int informacoes(Lista *li);
 int inverter(Lista *li);
 Lista* concatenar(Lista *li,Lista *ld);
 Lista* copia(Lista *li);
+Lista* segmentar(Lista *li, int n);
