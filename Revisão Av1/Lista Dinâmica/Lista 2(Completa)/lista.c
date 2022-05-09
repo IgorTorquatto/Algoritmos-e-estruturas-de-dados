@@ -313,12 +313,8 @@ Lista* segmentar(Lista *li, int n){
     if(*li == NULL) return 0;
     Lista *lf;
     lf = (Lista*)malloc(sizeof(Lista));
-    if(lf != NULL){
-        *lf = NULL;
-    }
-    else{
-        return 0;
-    }
+    if(lf ==NULL) return 0;
+	*lf=NULL;
     Elem *aux = *li;
     int i;
     for(i = 0; i < n; i++){
