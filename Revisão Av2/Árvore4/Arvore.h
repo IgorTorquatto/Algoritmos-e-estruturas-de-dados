@@ -8,3 +8,4 @@ int altura(Arvore *ab);
 int qtd_nos(Arvore *ab);
 int acessar(Arvore *ab,int x,int *a);
 void destruir(Arvore *ab);
+int consulta(Arvore *ab,int valor);

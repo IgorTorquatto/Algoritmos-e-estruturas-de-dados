@@ -179,3 +179,21 @@ int acessar(Arvore *ab,int x,int *a){
 		return 0;
 	}
 }
+
+int consulta(Arvore *ab,int valor){
+	if(ab==NULL) return 0;
+	No *aux;
+	aux=*ab;
+	while(aux!=NULL){
+		if(valor==aux->num){
+			return 1;
+		}
+		if(valor<aux->num){
+			aux=aux->esq;
+		}
+		else{
+			aux=aux->dir;
+		}
+	}
+	return 0;
+}
