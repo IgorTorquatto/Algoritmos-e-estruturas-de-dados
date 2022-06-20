@@ -31,6 +31,7 @@ void libera_no(No *x){
 void destruir(Arvore *ab){
 	if(ab!=NULL){
 		libera_no(*ab);
+		*ab=NULL;
 		free(ab);
 	}
 }
